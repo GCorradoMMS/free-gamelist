@@ -31,8 +31,8 @@ Requisitos:
 
 ## Arquitetura
 
-![Arquitetura](https://i.imgur.com/8QQYwzS.png)
-O docker-entrypoint-initdb.d não está sendo usado de fato por conta da migração das tabelas serem feitas na própria aplicação.
+![Arquitetura](https://i.imgur.com/AX8BJsB.pnghttps://i.imgur.com/8QQYwzS.png)
+No nosso serviço o endpoint contém uma lista de games gratuitos; quando chamamos em nossa aplicação, ele escolhe aleatoriamente um jogo da lista e nos disponibiliza.
 
 ## Instalação
 
@@ -41,15 +41,17 @@ Na pasta raíz do projeto, siga as seguintes instruções;
 ```sh
 docker-compose build app
 docker-compose up -d
+docker-compose exec app composer install
 docker-compose exec app php artisan migrate
+docker-compose exec app php artisan key:generate
 ```
 
 Para utilizar o serviço é necessário ir até ``localhost:8000`` no navegador.
-Se por algum acaso o projeto estiver sem as dependências do php, execute `` docker-compose exec app composer install`` antes da última instrução acima.
+Talvez seja necessário adicionar um `` sudo`` antes das instruções caso seu sistema seja linux.
 
 ## Sobre o projeto
 
-Foi desenvolvido com ``docker-desktop``, utilizando, primariamente, as seguintes tecnologias:
+Foi desenvolvido com ``docker`` e ``docker-compose``, utilizando, primariamente, as seguintes tecnologias:
 
 - [Laravel](https://laravel.com/)
 - [MySQL](https://www.mysql.com/)

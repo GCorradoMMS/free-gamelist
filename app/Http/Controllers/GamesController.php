@@ -38,7 +38,7 @@ class GamesController
     }
 
     public function getRandomGame(){
-        $response = Http::get('host.docker.internal:9091');
+        $response = Http::get('host.docker.internal');
         $data = json_decode( $response->body() );
         return $data;
     }

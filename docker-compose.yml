@@ -28,8 +28,6 @@ services:
       MYSQL_USER: 'devops'
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
-    volumes:
-      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
     networks:
       - gamelist
 
@@ -49,8 +47,10 @@ services:
     image: 'php:7.4-apache'
     container_name: endpoint
     restart: always
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     ports:
-      - '9091:80'
+      - '80:80'
     volumes:
       - ./endpoint:/var/www/html
     networks:
