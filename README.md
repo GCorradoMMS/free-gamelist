@@ -51,7 +51,7 @@ Talvez seja necessário adicionar um `` sudo`` antes das instruções caso seu s
 
 ## Sobre o projeto
 
-Foi desenvolvido com ``docker`` e ``docker-compose``, utilizando, primariamente, as seguintes tecnologias:
+Foi desenvolvido em ambiente Windows (Docker Desktop) com ``docker`` e ``docker-compose``, utilizando, primariamente, as seguintes tecnologias:
 
 - [Laravel](https://laravel.com/)
 - [MySQL](https://www.mysql.com/)
