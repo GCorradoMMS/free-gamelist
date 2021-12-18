@@ -1,4 +1,4 @@
-# DEVOPS- Free Gamelist
+# Docker POC - Free Gamelist
 
 ## _Sua lista de jogos gratuita!_
 
